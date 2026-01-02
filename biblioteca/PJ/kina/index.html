@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca - Sistema de Gestão</title>
+  <link rel="stylesheet" href="index.css">
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>Sistema de Gestão de Biblioteca</h1>
+ </section>
+
+<section id="emprestimos" class="hidden">
+  <h2>Controle de Empréstimos</h2>
+  <form>
+    <input type="text" placeholder="Código do Livro" required>
+    <input type="text" placeholder="ID do Usuário" required>
+    <label>Data do Empréstimo:</label>
+    <input type="date">
+    <label>Data da Devolução:</label>
+    <input type="date">
+    <button type="submit">Registrar Empréstimo</button>
+  </form>
+
+  <h2>Renovação</h2>
+  <form>
+    <input type="text" placeholder="ID do Empréstimo">
+    <button>Renovar</button>
+  </form>
+</section>
+
+<section id="catalogo" class="hidden">
+  <h2>Catálogo Online</h2>
+  <form>
+    <input type="text" placeholder="Buscar por título, autor, código...">
+    <select>
+      <option>Ordenar por título</option>
+      <option>Ordenar por autor</option>
+    </select>
+    <button>Buscar</button>
+  </form>
+</section>
+
+<section id="reservas" class="hidden">
+  <h2>Reservar Livro</h2>
+  <form>
+    <input type="text" placeholder="Código do Livro">
+    <input type="text" placeholder="ID do Usuário">
+    <button type="submit">Reservar</button>
+  </form>
+</section>
+
+<section id="relatorios" class="hidden">
+  <h2>Relatórios</h2>
+  <ul>
+    <li><button>Livros mais lidos</button></li>
+    <li><button>Empréstimos por período</button></li>
+ </header>
+
+<nav>
+  <a href="#" onclick="showSection('cadastro')">Cadastro</a>
+  <a href="#" onclick="showSection('emprestimos')">Empréstimos</a>
+  <a href="#" onclick="showSection('catalogo')">Catálogo</a>
+  <a href="#" onclick="showSection('reservas')">Reservas</a>
+  <a href="#" onclick="showSection('relatorios')">Relatórios</a>
+  <a href="#" onclick="showSection('admin')">Administração</a>
+</nav>
+
+<section id="cadastro">
+  <h2>Cadastro de Livros</h2>
+  <form>
+    <input type="text" placeholder="Título">
+    <input type="text" placeholder="Autor">
+    <input type="text" placeholder="Editora">
+    
+    <input type="number" placeholder="Ano">
+    <input type="text" placeholder="Gênero">
+    <input type="number" placeholder="Número de Exemplares">
+    <input type="file" accept="image/*">
+    <button type="submit">Cadastrar Livro</button>
+  </form>
+
+  <h2>Cadastro de Usuários</h2>
+  <form>
+    <input type="text" placeholder="Nome">
+    <input type="text" placeholder="Contato">
+    <select>
+      <option>Aluno</option>
+      <option>Professor</option>
+      <option>Visitante</option>
+    </select>
+    <select>
+      <option>Ativo</option>
+      <option>Inativo</option>
+    </select>
+    <button type="submit">Cadastrar Usuário</button>
+  </form>
+ <li><button>Livros com atraso</button></li>
+    <li><button>Inventário do acervo</button></li>
+  </ul>
+</section>
+
+<section id="admin" class="hidden">
+  <h2>Área Administrativa</h2>
+  <form>
+    <button>Gerenciar Permissões</button>
+    <button>Backup de Dados</button>
+    <label>Prazo máximo de empréstimo (dias):</label>
+    <input type="number" value="7">
+    <button>Salvar Configurações</button>
+  </form>
+</section>
+
+</body>
+</html>
+
+
